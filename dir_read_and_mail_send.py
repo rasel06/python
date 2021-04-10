@@ -13,12 +13,14 @@ port = 2525  # For SSL
 smtp_server = "smtp.mailtrap.io"
 sender = "rasel.course@gmail.com"  # Enter your address
 receiver = "rasel06@gmail.com"  # Enter receiver address
-message = """\
-Subject: Hi there
+
+message = f"""\
+Subject: Hi Mailtrap
+To: {receiver}
+From: {sender}
 
 This Files are found in 'etc' directory.
 """+file_list
-
 
 with smtplib.SMTP(smtp_server, port) as server:
     server.login("1d985fa0a1b0bb", "7b70d246629ab1")
