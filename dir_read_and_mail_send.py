@@ -20,6 +20,7 @@ To: {receiver}
 From: {sender}
 
 This Files are found in 'etc' directory.
+
 """+file_list
 
 with smtplib.SMTP(smtp_server, port) as server:
