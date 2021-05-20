@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime,timedelta
 from threading import Timer
 
 
@@ -26,19 +26,19 @@ day = int(input())
 print("Hours = ")
 hours = int(input())
 
-print("Hours = ")
+print("Minutes = ")
 minutes = int(input())
 
 x= datetime.today()
 
 
-y=x.replace(day=x.day+day,hour=hours,minute=minutes,second=0,microsecond=0)
+y=x.replace(day=x.day+day,hour=hours,minute=minutes,second=0,microsecond=0)+ timedelta(days=1)
 dela_t = y-x
 
-secs = dela_t.seconds+1
+secs = dela_t.total_seconds()
 
 t = Timer(secs,run_program)
 t.start()
 
-
+#https://stackoverflow.com/questions/15088037/python-script-to-do-something-at-the-same-time-every-day
 
